@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PDF ぱっか 1.0</title>
+
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <header class="app-header">
+    <img
+      src="./images/icon-64.png"
+      alt="PDFぱっか アイコン"
+      class="app-icon"
+    />
+    <h1 id="appTitle">PDF ぱっか 1.0</h1>
+  </header>
+
+  <main>
+  <!-- 言語選択 -->
+  <section id="languageArea"></section>
+
+  <!-- ★ 出力モード選択（MB13 / MB14） -->
+  <section id="modeArea"></section>
+
+  <!-- ★ コントロール全体 -->
+  <section id="controlArea">
+
+    <!-- ★ Left / Right 用の器だけを用意 -->
+    <div id="pdfInputArea" class="pdf-input-area">
+      <div id="pdfLeftArea" class="pdf-side"></div>
+      <div id="pdfRightArea" class="pdf-side"></div>
+    </div>
+
+  </section>
+
+  <!-- 実行ボタン・状態 -->
+  <section id="statusArea"></section>
+
+  <!-- 進捗 -->
+  <section id="progressArea"></section>
+</main>
+
+
+  <footer id="osNotice" class="os-notice hidden"></footer>
+
+  <!-- PDF解析ライブラリ -->
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+
+  <!-- 依存順厳守 -->
+  <script src="./js/select_language.js"></script>
+  <script src="./js/select_file_folder.js"></script>
+  <script src="./js/folder_output.js"></script>
+  <script src="./js/join_logic.js"></script>
+  <script src="./js/os_detect.js"></script>
+  <script src="./js/ui.js"></script>
+  <script src="./js/main.js"></script>
+
+</body>
+</html>

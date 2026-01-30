@@ -1,0 +1,281 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+}
+
+main {
+  padding: 1rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.6em 0.8em;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  margin-bottom: 1rem;
+}
+
+header img {
+  display: block;
+}
+
+
+
+button {
+  margin: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+select {
+  font-size: 1rem;
+  padding: 4px 8px;
+}
+
+#statusArea {
+  line-height: 1.6;
+}
+
+#statusArea p,
+#statusArea div {
+  margin: 0.3em 0;
+}
+
+#controlArea > div {
+  margin-bottom: 0.6em;
+}
+
+.file-name {
+  font-size: 0.9em;
+  opacity: 0.8;
+  margin-left: 0.5em;
+}
+/* ===== 強制リセット ===== */
+#controlArea *,
+#statusArea * {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+/* 行ごとの間隔を統一 */
+#controlArea > div,
+#statusArea > p,
+#statusArea > div,
+#statusArea > button {
+  margin-bottom: 0.6em;
+}
+
+/* ===== UI 行間 完全統一 ===== */
+
+/* まず全部リセット */
+#languageArea *,
+#controlArea *,
+#statusArea * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 行として並ぶ要素を統一 */
+#languageArea select,
+#controlArea button,
+#controlArea div,
+#statusArea p,
+#statusArea div,
+#statusArea button {
+  display: block;
+  line-height: 1.6;
+  margin-bottom: 0.6em;
+}
+
+/* 最後の要素だけ余白なし */
+#statusArea > :last-child {
+  margin-bottom: 0;
+}
+
+/* ===== 高さの基準を完全統一 ===== */
+button,
+select {
+  line-height: 1.6;
+  height: 2.4em;
+  padding: 0 0.75em;
+}
+
+/* ファイル名などの表示行 */
+.file-name,
+#statusArea p,
+#statusArea div {
+  min-height: 2.4em;
+  display: flex;
+  align-items: center;
+}
+/* ===== Progress Bar ===== */
+#progressArea {
+  margin-top: 1rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: #4caf50;
+  transition: width 0.2s ease;
+}
+
+/* ===== 枠（box） ===== */
+.box {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.8em;
+  margin-bottom: 0.8em;
+  background: #fff;
+}
+
+/* 枠内の補足表示（ファイル名・保存先） */
+.box-sub {
+  margin-top: 0.4em;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+#appTitle {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+:root {
+  --main-blue: #1EA7E1;
+  --main-blue-hover: #168EC0;
+  --accent-red: #E53935;
+  --text-dark: #333;
+  --border-light: #e0e0e0;
+}
+button.primary {
+  background: var(--main-blue);
+  color: white;
+  border: none;
+}
+
+button.primary:hover:not(:disabled) {
+  background: var(--main-blue-hover);
+}
+
+button.danger {
+  background: var(--accent-red);
+  color: white;
+  border: none;
+}
+
+button:disabled {
+  background: #ccc;
+  color: #777;
+  cursor: not-allowed;
+}
+.os-notice {
+  margin-top: 1rem;
+  padding: 0.8em;
+  font-size: 0.9em;
+  line-height: 1.5;
+  background: #fff3cd;
+  color: #664d03;
+  border: 1px solid #ffecb5;
+  border-radius: 6px;
+}
+
+
+.os-notice {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.75em 1em;
+
+  background: #fff3cd;
+  color: #333;
+  font-size: 0.9em;
+  text-align: center;
+
+  border-top: 1px solid #e0c97f;
+  z-index: 1000;
+
+  /* iPhone セーフエリア対応 */
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.os-notice.hidden {
+  display: none;
+}
+/* ===== OS通知は常に表示可能にする（footer 初期display対策） ===== */
+#osNotice {
+  display: block;           /* ← 決定打 */
+}
+
+/* hidden がある時だけ非表示 */
+#osNotice.hidden {
+  display: none;
+}
+
+/* ===== OS通知 表示制御（最終確定版） ===== */
+
+/* footer 要素の初期 display 問題を強制的に解除 */
+#osNotice {
+  display: block;
+}
+
+/* hidden が付いているときだけ非表示 */
+#osNotice.hidden {
+  display: none;
+}
+
+/* ===== OS通知（iPhone Safari 最終確定版） ===== */
+#osNotice {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: block;
+  z-index: 9999;
+
+  background: #fff3cd;
+  color: #333;
+  font-size: 0.9em;
+  text-align: center;
+
+  border-top: 1px solid #e0c97f;
+
+  padding: 0.75em 1em;
+  padding-bottom: calc(0.75em + env(safe-area-inset-bottom));
+}
+
+#osNotice.hidden {
+  display: none;
+}
+.note {
+  font-size: 0.9em;
+  color: #555;
+  margin: 4px 0 8px;
+}
+/* ===== PDFぐうう：読込ファイル一覧スクロール制御 ===== */
+
+.box-sub {
+  max-height: 15vh;        /* 画面高さの15% */
+  overflow-y: auto;        /* 縦スクロール */
+  overflow-x: hidden;      /* 横は出さない */
+  padding-right: 4px;      /* スクロールバー分の余白 */
+  box-sizing: border-box;
+}

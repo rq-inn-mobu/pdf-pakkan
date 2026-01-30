@@ -1,0 +1,14 @@
+Number,L1,L2,L3
+MB1,English,日本語,繁体字
+MB2,Select the File to Load,読込ファイルを選択してください,請選擇要載入的文件
+MB3,Specify the destination Folder,保存先フォルダを指定してください,請指定目標資料夾
+MB4,Start,スタート,開始
+MB5,Please wait a moment,しばらくお待ちください,請稍等片刻
+MB6,Done,完了しました,完畢
+MB7,Save destination:,保存先:,保存目標:
+MB8,※ Please select multiple PDFs at the same time.,※ 複数のPDFを同時に選択してください ,※ 請同時選擇多個PDF文件
+MB9,※ File names will be combined in ascending order.,※ ファイル名の昇順ソートで結合されます ,※ 檔案名稱將按升序合併
+MB10,Left page: Select a file,左側ページ：ファイルを選択,左側頁面：選擇文件
+MB11,Right page: Select a file,右側ページ：ファイルを選択,右側頁面：選擇文件
+MB13,For viewing PDFs,PDF閲覧用,查看PDF文件
+MB14,for printing,印刷用,用於列印
